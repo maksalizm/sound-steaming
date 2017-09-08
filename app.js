@@ -4,9 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var sass = require('node-sass');
+var fs = require('fs');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+
+// var port = process.env.PORT || '3000';
 
 var app = express();
 
@@ -22,6 +26,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var result = sass.renderSync({
+    file: path.join(__dirname, 'public/styles/app.scss'),
+    outputStyle: 'compressed'
+});
+
+(function() {
+    fs.writeFileSync(path.join(__dirname, 'public/stylesheets/style.css'), result.css);
+}());
 app.use('/', index);
 app.use('/users', users);
 
@@ -42,5 +54,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// app.listen(port);
 
 module.exports = app;

@@ -14,7 +14,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('clean', function() {
-    return del.sync(['./public/stylesheets/style.css']);
+    return del.sync(['./public/stylesheets/app.css']);
 });
 
 gulp.task('default', ['clean', 'sass', 'watch']);

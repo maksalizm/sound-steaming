@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-// var port = process.env.PORT || '3000';
+var port = process.env.PORT || '3000';
 
 var app = express();
 
@@ -45,6 +45,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// app.listen(port);
+app.listen(port);
 
 module.exports = app;

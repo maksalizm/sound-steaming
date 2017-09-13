@@ -1,3 +1,88 @@
 p {
-    color: blueviolet;
+    color: cornflowerblue;
+    font-size: 14px;
+}
+
+.header {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    font-size: 20px;
+    color: #ffffff;
+    .nav-top {
+        height: 50px;
+        background-color: cornflowerblue;
+        text-align: center;
+    }
+    .nav-bottom {
+        height: 46px;
+        background-color: lightskyblue;
+        .nav-bottom-list {
+            font-size: 0;
+            .nav-bottom-list-el {
+                display: inline-block;
+                font-size: 16px;
+                a {
+                    display: inline-block;
+                    padding: 15px 20px 13px;
+                    color: #ffffff;
+                    &:hover {
+                        background-color: deepskyblue;
+                    }
+                }
+            }
+        }
+    }
+    .logo {
+        margin: 0 auto;
+        padding-top: 15px;
+        text-align: center;
+    }
+    .menu {
+        position: fixed;
+        top: 15px;
+        left: 10px;
+        text-decoration: none;
+    }
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    padding-top: 96px;
+    &:after {
+        display: block;
+        clear: both;
+        content: '';
+    }
+}
+
+.news-box-container {
+    position: relative;
+    width: 355px;
+    height: 355px;
+    margin: 10px;
+    overflow: hidden;
+    transform: translate(-710px, 0px);
+    &:after {
+        display: block;
+        clear: both;
+        content: '';
+    }
+    .news-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 355px;
+        height: 355px;
+        &-img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        &-title {
+
+        }
+    }
 }
